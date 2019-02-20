@@ -45,7 +45,7 @@ Internal links
 ~~~~~~~~~~~~~~
 ::
 
-   :ref:`text<folder/docname:heading>`
+   :ref:`text <folder/docname:heading>`
 
 External links
 ~~~~~~~~~~~~~~

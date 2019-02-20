@@ -25,21 +25,50 @@ An overview of the entire project can be accessed via Kumu via the `AMR Org Char
 
 To edit or contribute, please contact Brennan Chapman.
 
+Scope
+~~~~~
+To reduce the scope of the project to a manageable size, the three most common food-animal species and the three most commonly isolated enteric bacteria from those species were selected as the core areas of focus. These include chicken, cattle, and swine, and E. coli, Salmonella Spp. and Campylobacter Spp. for host species and bacterial species respectively. While the primary human exposure route is assumed to be consumption of the corresponding agri-food products (chicken, beef, and pork), additional focus has been placed on environmental exposure routes (e.g. through the consumption of leafy greens or root vegetables, grown in manure-amended soils).
+
+Additional food-animal and bacterial species of interest include turkeys and Enterococcus Spp., which may be explored later as the project progresses. 
+
+Organization via stories
+++++++++++++++++++++++++
+The models are organized primarily by ‘stories’, or bug-drug-host combinations of particular interest. Existing stories and their corresponding models are available in the IAM.AMR GitHub repository. 
+
+
 Literature Search
 ~~~~~~~~~~~~~~~~~
+The IAM.AMR models are informed by a single, all-encompassing literature search. A description of the literature search and associated products is provided on the :ref:`literature search main page <project/search:Literature Search>`.
 
-The CEDAR Database
+The CEDAR database
 ~~~~~~~~~~~~~~~~~~
+CEDAR, the Collection of Epidemiologically Derived Associations with Resistance, is a Microsoft Access database, designed to house data extracted in support of the IAM.AMR project and associated activities.
+
+The studies identified through the literature search are reviewed, and data extracted as per a number of criteria outlined on the :ref:`CEDAR main page <project/cedardb:The CEDAR Database>`.
 
 The cedarr package
 ~~~~~~~~~~~~~~~~~~
+The cedarr package is an R package which processes queries extracted from the CEDAR database. The package is fully documented in-line using Roxygen2, and is outlined on the :ref:`cedarr main page <project/cedarr:The cedarr Package>`.
 
 Model Building
 ~~~~~~~~~~~~~~
+Once the data are extracted from the literature, collated in -- and queried from -- the database, and processed by the R package, they are included in a model built around a robust model framework.
+
+Model building is discussed throughout subsequent sections.
 
 
 Funding and History
 -------------------
+Stakeholders from each human, animal, and environmental health disciplines are often engaged in addressing the risk posed by AMR in the agri-food production system. A project [#Majowicz]_ by an associated team aimed to identify non-traditional stakeholders, who are often overlooked for engagement, but are nonetheless affected by AMR. As part of this project, the team created a large diagram of drivers, included below.
+
+.. figure:: /images/majfig2.png
+   :align: center
+
+   Figure 2 from Majowicz et al. (2018) demonstrating the complexity of the drivers of AMR.
+
+The IAM.AMR project was born out of the concept of enumerating these identified pathways. Beginning in 2014, the IAM.AMR project was supported by the Ontario Ministry of Agriculture, Food and Rural Affairs (OMAFRA) New Directions Funding Program (Project ND2013‐1967), with a focus on the applicability of the models specifically to Ontario (a focus that remains today). Subsequently, the project has been continued as a sub-project of GRDI-AMR.
+
+.. [#Majowicz] Majowicz, S.E., Parmley, E.J., Carson, C. et al. BMC Res Notes (2018) 11: 170. https://doi.org/10.1186/s13104-018-3279-8
 
 GRDI
 ~~~~

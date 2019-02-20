@@ -20,6 +20,10 @@ Welcome to the documentation for the IAM.AMR project, which seeks to use Integra
 
    /project/background
    /project/prostructure
+   /project/search
+   /project/cedardb
+   /project/cedarr
+   
 
 .. toctree::
    :caption: Technology
