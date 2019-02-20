@@ -14,7 +14,7 @@ If you have minor edits, and GitHub or reST aren’t your thing, submit the requ
 
 Where can I find more information?
 ----------------------------------
-To get started with reStructuredText and Sphinx locally, check out the Sphinx `tutorial <http://docs.sphinxdocs.com>`_ or their `Getting Started <http://www.sphinx-doc.org/en/master/usage/quickstart.html>`_ guide.
+To get started with reStructuredText and Sphinx locally, check out the Sphinx `tutorial <http://docs.sphinxdocs.com>`_ or the `getting started <http://www.sphinx-doc.org/en/master/usage/quickstart.html>`_ guide.
 
 
 

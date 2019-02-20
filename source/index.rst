@@ -10,9 +10,16 @@ Welcome to the documentation for the IAM.AMR project, which seeks to use Integra
    :caption: Welcome
    :maxdepth: 1
 
-   /project/about
+   /project/about_docs
    /project/summary
 
+.. toctree::
+   :caption: IAM.AMR
+   :maxdepth: 2
+   :numbered:
+
+   /project/background
+   /project/prostructure
 
 .. toctree::
    :caption: Technology
@@ -20,3 +27,12 @@ Welcome to the documentation for the IAM.AMR project, which seeks to use Integra
    :numbered:
 
    /technology/software
+
+.. toctree::
+   :caption: Reference
+   :maxdepth: 2
+   :numbered:
+
+   /reference/conventions
+   /reference/reST
+   /reference/faqs
