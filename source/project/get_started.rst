@@ -18,7 +18,7 @@ To access the most up-to-date versions of the models, you will need to be regist
 
 Once you have access, simply opt to download the models as a ZIP file, using the large green 'Clone or Download' button. 
 
-.. image:: /images/github_home_screen.PNG
+.. image:: /images/github_home_screen.png
 
 If you will not regularily need up-to-date copies of the models, you can also follow the 'For Users' section below.
 

@@ -52,8 +52,14 @@ AMU
 CFIA
    Canadian Food Inspection Agency
 
+CIPARS
+   Canadian Integrated Program for Antimicrobial Resistance Surveillence
+
 CSS
    Cascading Style Sheets
+
+GRDI
+   Genomics Research and Development Initiative
 
 HC
    Health Canada
