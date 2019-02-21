@@ -12,6 +12,7 @@ Welcome to the documentation for the IAM.AMR project, which seeks to use Integra
 
    /project/about_docs
    /project/summary
+   /project/get_started.rst
 
 .. toctree::
    :caption: IAM.AMR
@@ -31,6 +32,8 @@ Welcome to the documentation for the IAM.AMR project, which seeks to use Integra
    :numbered:
 
    /technology/software
+   /technology/analytica
+   /technology/git
 
 .. toctree::
    :caption: Reference

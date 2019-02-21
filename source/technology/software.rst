@@ -111,3 +111,8 @@ Where multiple versions of R are available, or where the installation has not su
 If you are prompted during RStudio’s installation, choose the most appropriate version of R from the ‘Choose a specific version of R’ dropdown. If there are none listed, use ‘Browse…’ to navigate to the ‘bin’ sub-directory of your installation, and select ‘R.exe’.
 
 If you have multiple versions of R installed and you would like to choose a different version after RStudio has been installed, you can make the selection from Tools > Global Options. 
+
+
+Other Software
+~~~~~~~~~~~~~~
+For software such as :ref:`Analytica <technology/analytica:Analytica>` and :ref:`GitHub Desktop <technology/git:Git et al.>`, refer to their respective main pages.
