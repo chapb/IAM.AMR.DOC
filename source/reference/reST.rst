@@ -1,6 +1,6 @@
 
-reStructuredText Reference
-==========================
+reStructuredText
+================
 
 Document Layout
 ---------------

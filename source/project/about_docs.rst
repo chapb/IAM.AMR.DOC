@@ -2,9 +2,9 @@
 
 About this document
 ===================
-This documentation is written in reStructuredText (reST), a lightweight markup language originally used for documenting Python (the computer programming language). Like other markup languages (e.g. Markdown, AsciiDoc), reST combines plain-text, human-readable content with simple formatting tags to outline a universal document structure. Then, the raw plain-text files are converted to the appropriate language (e.g. HTML for a website, PDF, EPUB) by a document generator -- Sphinx.
+This documentation is written in `reStructuredText <http://docutils.sourceforge.net/rst.html>`_ (reST), a lightweight markup language originally used for documenting Python (the computer programming language). Like other markup languages (e.g. Markdown, AsciiDoc), reST combines plain-text, human-readable content with simple formatting tags to outline a universal document structure. Then, the raw plain-text files are converted to the appropriate language (e.g. HTML for a website, PDF, EPUB) by a document generator -- Sphinx.
 
-The raw files are stored in GitHub, a web-based service for version control and collaboration. As files are submitted or changed, `Read the Docs <https://readthedocs.org/>`_ runs an instance of Sphinx, generates the HTML, and hosts it here!
+The raw files are stored in GitHub, a web-based service for version control and collaboration. As files are submitted or changed, `Read the Docs <https://readthedocs.org/>`_ runs an instance of Sphinx, generates the HTML, and hosts it here! Read the Docs is a free hosting service for documentation, supported by `unobtrusive, and ethical ads <https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html>`_.
 
 How do I make edits?
 --------------------

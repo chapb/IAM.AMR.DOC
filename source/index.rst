@@ -43,3 +43,4 @@ Welcome to the documentation for the IAM.AMR project, which seeks to use Integra
    /reference/conventions
    /reference/reST
    /reference/faqs
+   /reference/publications
