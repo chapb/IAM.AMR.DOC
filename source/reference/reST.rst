@@ -1,4 +1,5 @@
 
+
 reStructuredText
 ================
 
@@ -36,6 +37,8 @@ The following symbols should be used for headings::
    H3 ~~~
    H4 +++
    H5 ^^^
+
+Only top-level headings should use Title Case. Sub-headings should use Sentence case.
 
 
 Links
@@ -104,3 +107,20 @@ References
 The quick brown fox jumped over the lazy [#chapman]_ dog.
 
 .. [#chapman] Chapman, B. et al. (2019) The laziness of the common dog. Journal. Issue. DOI.
+
+
+Images
+------
+::
+
+   .. image:: images/image_name.png
+
+
+Figures
+-------
+::
+
+   .. figure:: /images/figure_name.png
+      :align: center
+
+      This is the descriptive text for the figure.
