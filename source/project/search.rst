@@ -80,7 +80,7 @@ Unlike other literature review software, Rayyan will not automatically assign re
 
 Each reference must be reviewed in duplicate (i.e. by two reviewers). To ensure you're not reviewing a reference which has already been reviewed in duplicate, use the 'Maximum collaborator decisions' filter in the filters panel to limit the references to 'At most 1', as shown below.
 
-.. figure:: /images/rayyan_filter_need_to_screen.png
+.. figure:: /images/rayyan_filter_to_screen.png
     :align: center
     
     Using the 'At most 1' filter limits the returned references to those not already screened in duplicate.
