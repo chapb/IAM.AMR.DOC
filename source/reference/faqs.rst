@@ -1,5 +1,6 @@
 
 
+====
 FAQs
 ====
 
@@ -20,3 +21,20 @@ What are our future goals?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Time, Quantitative AMU, Human side, Environment, WGS, Sensitivity.
+
+Troubleshooting
+---------------
+
+Why can I not access the IAM.AMR model repository?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Please ensure you have...
+
+ 1. Created a GitHub account and submitted your GitHub username to the :ref:`IAM.AMR Repository Administrator <reference/roles:Roles>`, either directly, or through the `onboarding survey and guide <https://uoguelph.eu.qualtrics.com/jfe/form/SV_cBeTb8mUpkJPdvn>`_?
+ 2. Waited one to two days. Approval is manual -- it may take one to two days to complete.
+ 3. Accepted the invitation, either through an email notification, a notification on GitHub, or by visiting the `invitation page <https://github.com/chapb/IAM.AMR/invitations>`_ while signed in to your account.
+    - If that page does not resolve (i.e. the page is not found), move on to another step.
+ 4. Attemped to access the repository, either directly, at https://github.com/chapb/IAM.AMR or in the repositories list on the left-hand side of GitHub while signed in to your account.
+
+If you have tried the steps above, and you still can not access the IAM.AMR model repository, please contact the :ref:`IAM.AMR Repository Administrator <reference/roles:Roles>`.
+
+

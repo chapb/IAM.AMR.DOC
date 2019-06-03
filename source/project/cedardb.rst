@@ -5,29 +5,98 @@ The CEDAR Database
 
 Introduction
 ------------
-The Collection of Epidemiologically Derived Associations with Resistance (CEDAR) database is a Microsoft Access database designed to facilitate the extraction and organization of data relevant to the IAM.AMR project.
+CEDAR, or the Collection of Epidemiologically Derived Associations with Resistance, is a Microsoft Access database designed to facilitate the extraction and retrieval of data relevant to the IAM.AMR project. 
 
-Previous Approach
-~~~~~~~~~~~~~~~~~
+What is a database?
+~~~~~~~~~~~~~~~~~~~
+A database is simply a collection of data, organized a way that makes it easy to search for, select, and retrieve specific subsets of information. CEDAR is a relational database, which means our data are split logically across different tables, linked together by relationships between common fields. By taking the time to separate our data into individual tables and define these relationships, we can ask complicated questions of our data, while reducing the amount of redundant or duplicate information that we must extract and store.
 
-Why a Database?
+.. note:: Technically, a "database" is simply a collection of data, and the "database management system" is the software we use to create, manage, and access that data. However, the term "database" is used colloquially to refer to both the data itself, the software, and the forms and reports we use to enter and extract the data respectively.
 
+How does a database differ from a spreadsheet?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Take a look at the table below that includes demographic and political information for some of Canada’s largest cities. This represents a traditional *flat-file* or spreadsheet approach.
+
+==========  ==========  ==========  ==========  ==========
+Province    Premier     Party       City        Population
+==========  ==========  ==========  ==========  ==========
+Ontario     Ford        CPC         Toronto     2,700,000
+Quebec      Legault     CAQ         Montreal    1,700,000
+Alberta     Notley      NDP         Calgary     1,200,000
+Ontario     Ford        CPC         Ottawa      934,000
+Alberta     Notley      NDP         Edmonton    932,000
+Ontario     Ford        CPC         Mississ...  721,000
+==========  ==========  ==========  ==========  ==========
+
+What you may notice is that there are two drawbacks to this approach. The first is that there are many duplicate values -- some poor research assistant had to input “Ontario”, “Ford”, and “CPC” three times. This increases the size of our database, increases the amount of time required for data entry, and is prone to errors.
+
+The second drawback is that out table does not serve a single logical purpose -- if you had to title it, what would that title be? The table includes a mix of provincial-level and municipal-level data that are not directly related, so why should they be in the same table?
+
+A relational database approach would involve splitting these two tables into unique entities, and linking them via a common field:
+
+==========  ==========  ==========  ==========  
+ID          Province    Premier     Party     
+==========  ==========  ==========  ==========
+01          Ontario     Ford        CPC       
+02          Quebec      Legault     CAQ       
+03          Alberta     Notley      NDP          
+==========  ==========  ==========  ==========
+
+==========  ==========  ==========
+Prov. ID    City        Population
+==========  ==========  ==========
+01          Toronto     2,700,000
+02          Montreal    1,700,000
+03          Calgary     1,200,000
+01          Ottawa      934,000
+03          Edmonton    932,000
+01          Mississ...  721,000
+==========  ==========  ==========
+
+Now, each table represents a single theme or purpose, and we’ve dramatically reduced the number of times we’ve had to enter error-prone data by replacing multiple fields with a single ID number. CEDAR takes this type of approach, but with a more complex data structure.
+
+What is some basic database terminology?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A **database** is a collection of **tables**, linked together by defined **relationships**.
+
+Tables, like those in a spreadsheet, consist of rows and columns. Each row also known as a **tuple** or **record**, is a set of data which represents a single item. This set of data consists of multiple named pieces of data, known as **attributes** or **fields**, which are organized into columns. In our examples above, each row is a set of data corresponding to a major city. Each set of data has individual data points, corresponding to the headings (or fields) of our table.
+
+A **form** is how we enter data into the database. It is a graphical, easy-to-use way of entering data across many tables at once. In the example above, we might have a simple form to allow users to enter the population size, with a pre-filled dropdown menu of provinces to make data entry faster. A **query** is a request we pass to the database to retrieve a specific subset of records and fields, constrained by criteria we specify. In the example above, we might query the database, asking the question “which premiers preside over regions with cities exceeding one million people”. 
+
+What is not covered in this documentation?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+There are a number of advanced concepts and workflows that this documentation simply cannot reasonably describe, including designing forms, designing queries, directly accessing and modifying tables, adding non-relevant references, adding meta-analysis meta-data, making edits where data were improperly entered, adding items to dropdowns, etc.
+
+When in doubt, or if an advanced change would make your life easier, contact the database administrator.
 
 
 Opening the Database
 --------------------
-The CEDAR database consists of two separate and distinct files. The first (and most important) is the *back-end* file. This is the central repository where data is actually stored -- it remains in the same location, on the network, at all times. The second is the *front-end* file, through which we input, retrieve, and manipulate data. You can think of these front-end and back-end files like a web browser and a website respectively -- the website contains the data, and you access it through the browser. And, just like we can access a website through many browsers, at many locations, we can access the back-end through many versions of the front-end, and on our individual computers. So when we refer to “Opening the Database”, what we actually mean is opening the front-end file.
 
-.. note:: When the database is distributed outside the organization, these files may be combined for ease-of-use.
+Understanding the database files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The CEDAR database consists of two separate and distinct files. The first (and most important) is the *back-end* file. This is the central repository where data is actually stored -- it remains in the same location, on PHAC's network, at all times. The second is the *front-end* file, through which we input, retrieve, and manipulate data. You can think of these front-end and back-end files like a web browser and a website respectively -- the website contains the data, and you access it through the browser. And, just like we can access a website through many browsers, at many locations, we can access the back-end through many versions of the front-end, and on our individual computers. So when we refer to “opening the database”, what we actually mean is opening the front-end file, to interact with the data in the back-end file.
 
-To continue our website analogy, while the front-end file is entirely portable (like a web browser on a laptop), the back-end file must never move (like Google, or Facebook). However, just like the path to Google is slightly different based on the country you’re in (e.g. https://google.com in the USA, https://google.ca in Canada), the path to the database is slightly different based on your roll at PHAC. Therefore, when you receive a front-end file, we may have to *re-link* this file with our back-end.
+.. note:: If the database is distributed outside of PHAC, the back may be combined into a . There is little to no difference in the appearance 
 
-How will you know you need to re-link the database? You’ll see an error like this:
+Opening the front-end file
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upon opening CEDAR, you’ll be presented with a mostly blank screen:
 
-INSERT PICTURE
+.. figure:: /images/cedar_overview.PNG
 
-Re-linking the Database
-~~~~~~~~~~~~~~~~~~~~~~~
+On the left hand side, all of the database objects are grouped by type in the Navigation Bar. As previously described, these objects include tables (raw data), queries (specific subsets of data), and forms (interfaces to view and add data).
+
+Re-linking the database files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+To continue our website analogy, while the front-end file is entirely portable (like a web browser on a laptop), the back-end file must never move (like Google, or Facebook). However, just like the path to Google is slightly different based on the country you’re in (e.g. https://google.com in the USA, https://google.ca in Canada), the path to the database is slightly different based on your roll at PHAC. Therefore, when you receive a front-end file, we may have to *re-link* this file with the back-end.
+
+How will you know you need to re-link the database? You’ll see an error like this when opening on a table, query, or form:
+
+.. figure:: /images/cedar_unlink.PNG
+
+To re-link the files:
+
 * In the ribbon at the top of the screen, select the *External Data* tab, and then select *Linked Table Manager*. Accept the security notice (if prompted).
 * On the right-hand side of the *Linked Table Manager*, select *Select All*, and then *OK*.
 * An explorer window will open. Navigate to, and select the back-end file.
@@ -36,77 +105,23 @@ When complete, save the file (using CTRL-S, or the save icon in the upper left c
 
 .. tip:: You will have to complete the re-linking each time a new version of the front-end file is distributed.
 
-A note about data
------------------
-BE AWARE that you are accessing live data! Any changes you make are instantly reflected in the database (there is no save required to confirm changes), and modified data can not be readily recovered. Please take care not to erroneously modify or delete data.
+
+Accessing the Main Form to View and Enter Data
+----------------------------------------------
+
+The Main Form [Data Entry (Main)] is a combination of two individual forms, highlighted below. The left panel of the form is related to study-level information, and is further broken down into several tabs. The right-panel of the form is related to factor-level information, and is formatted as a continuously scrolling list.
+
+.. figure:: /images/cedar_form.PNG
+   
+   1: The left panel relates to study-level information. 2: The right panel is a continuously scrolling list of factor-level information.
+
+The form is designed to be as straightforward as possible. The contents of each field are described in the data dictionary, along with specific formatting preferences and requirements. However, the easiest way to understand the purpose of a given field is to look at one of the existing examples.
+
+INSERT DATA DICTIONARY
+
+A brief description is also available in the Status Bar (in the lower left corner), when the cursor is placed in the field, and as a control tip when the field is hovered-over.
 
 
-Navigating the Database
------------------------
-
-Opening the Form
-~~~~~~~~~~~~~~~~
-
-differentiate the record from each in the sub table.
-
-Elements of the Record
-~~~~~~~~~~~~~~~~~~~~~~
-
-Moving through records
-~~~~~~~~~~~~~~~~~~~~~~
-To view the entered data, use the arrows at the bottom of the screen to change between records – the official term for entries in a database. 
-
-Search
-~~~~~~
-
-To skip to a particular record (reference), first place the cursor in the Short Name field, and then use the search bar at the bottom of the screen. Note that this search is somewhat finicky -- it will look for occurrences of your search term in the current record first, then jump to other records. Therefore, after entering your term, you may have to use the Enter Key to continue through these matches until you find the correct record.
-
-
-Adding New Records
-------------------
-A new reference can be added to the database, either by scrolling past the last record (reference) or by using the *New Record Button* (right arrow over yellow asterisk) at the bottom of the screen.
-
-Add a Short Name
-~~~~~~~~~~~~~~~~
-The only absolutely required piece of information (that Access will loudly complain if you forget) is the Short Name -- it's the identifier that links all tables in the database.
-
-The Short Name should be defined as follows:
-
-FirstAuthor et al. (year)
-
-If there is more than one publication for the same author, append a letter as follows:
-
-- FirstAuthor et al. (Year)a
-- FirstAuthor et al. (Year)b
-
-.. tip:: If you  
-
-Fill in the Remainder of the Bibliographic information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Assumptions
-* Do not worry about listing assumptions such as those listed below, as they to be made at the project level:
-
-  * Assumed to reflect the Canadian context
-  * E. coli is assumed to behave like Salmonella
-
-
-
-
-Fill in the Factor information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--	Extract count data with no decimal places, and extract percentages to one decimal place
--	If no measure of statistical significance (e.g. P-Value) is reported, put “NR” to indicate that in the significance field
-
-Priority
-++++++++
-We prefer count data (2-by-2, or contengency table) information over percentages if both are available. However, do not convert one to the other.
-
-
-Roles Not Covered
------------------
-
-Designing Queries, Adding Meta-analyses, Directly addeing tables/records, changes lik ethat.
 
 
 Roles Covered
@@ -114,7 +129,6 @@ Roles Covered
 
 Data extraction
 
-note that they can see the field descriptors in the menu bar!
 
 
 
@@ -193,7 +207,7 @@ Where a measurement occurs too soon or too long after an exposure, such that the
 Immutable Factors
 ~~~~~~~~~~~~~~~~~
 
-Including comparisons between sampling period where nothing has changed other than time. Location (outside canada).
+Including comparisons between sampling period where nothing has changed other than time. Location.
 
 Levels of Abnalysis
 ~~~~~~~~~~~~~~~~~~~

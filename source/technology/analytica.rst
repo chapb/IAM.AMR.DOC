@@ -18,11 +18,29 @@ Analytica Professional is the standard, fully featured edition of Analytica, whi
 
 Analytica Free 101 offers the same functionality as Analytica Professional, but limits users to the creation and modification of smaller models, containing no more than 101 nodes. Users can still open and evaluate larger models, but cannot make changes to variables or the underlying model structure. You will be able to open and run the IAM.AMR models with Analytica Free 101, but you will not be able to edit them.
 
-.. caution:: Older versions of Analytica Professional (4.6 or earlier) have additional limitations with respect to OLE links. You will not be able to create or update OLE links as used in the IAM.AMR.CFG system. **ADDLINK**
+.. caution:: Older versions of Analytica Professional (4.6 or earlier) may have additional limitations with respect to OLE links. You will not be able to create or update OLE links as used in the IAM.AMR.CFG system.
 
 All editions can be installed using the same installer, available from `Lumina's download page <http://www.lumina.com/support/downloads/>`_.
 
-.. note:: Installing Analytica requires administrative privileges -- there is no way to bypass NSD for installation on a GoC machine.
+Installing Analytica on a GoC computer
+++++++++++++++++++++++++++++++++++++++
+Analytica **is packaged** for GoC computers (i.e. Analytica is an authorized program). However, these packages are rarely up to date.
+
+The only action that the installer performs that is required is the generation of a license file -- otherwise Analytica can be run as extracted. We can skip the installation (requiring administrator privileges) if we have a license (e.g. professional or enterprise), or a license file for Analytica Free 101.
+
+.. tip:: The following instructions use C:/myprograms as an example installation directory. You can install these programs in any writable directory. These instructions also assume you are using a 64-bit operating system -- this is true of most modern computers.
+
+#. Download the latest version of `the Analytica installer <http://www.lumina.com/support/downloads/>`_.  
+#. Right-click on the installer and select '7-Zip > Extract to "Ana64Setup"'. This will create a new folder in your current directory. 
+#. Navigate to the root of your C:/ drive, and if it doesn't already exist, create a new folder called 'myprograms'.
+#. Move the folder you created in step 2 into the myprograms folder.
+#. Navigate to the folder (within C:/myprograms/), and locate the 'Analytica64.exe' executable. Right-click on Analytica64.exe and select 'Send to > Desktop' to create a shortcut.
+#. Launch Analytica.
+#. You will be prompted to enter a license code.
+
+   - If you have a license code, enter it here.
+   - If you do not have a license code (i.e. you are using the free version), :download:`download this license file <../assets/Free101.lic>` by right-clicking on the link and choosing *Save link as...*. Copy the downloaded license file to your installation folder (the one within C:/myprograms/). Then, from the *License ID* dropdown, select *Add license from .lic file*, and select the downloaded license file. The installation should authorize. The license selection window can also be accessed through the *Help > Update license* menu.
+
 
 Getting Started in Analytica
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

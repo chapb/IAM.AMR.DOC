@@ -38,7 +38,23 @@ The following symbols should be used for headings::
    H4 +++
    H5 ^^^
 
-Only top-level headings should use Title Case. Sub-headings should use Sentence case.
+Only H1 and H2 level headings should use Title Case. Sub-headings should use Sentence case.
+
+Heading Labels
+++++++++++++++
+To link to a duplicated heading (i.e. two sections in the same document have the same heading), you will need to specify a heading label. Heading labels should be used where the heading is a common word, phrase, or where the heading is known to be repeated later in the document. 
+
+Heading labels are placed above the heading, with a blank line seperating the heading label and heading. Where heading labels are used, two blank lines should come before it, regardless of the heading level.
+::
+
+   .. _this_is_a_heading_label:
+
+   This is the Heading
+   -------------------
+
+If there is a duplicated heading, you will recieve a build warning regardless of your specified label (as autosectionlabel creates its own labels automatically). The duplicated label will be ambiguous (testing seems to show it will default to the last entry), and therefore not suitable for linking.
+
+We use a slightly different format for links to a manually labeled section (we drop the path); see the links section below for more details.
 
 
 Links
@@ -50,12 +66,23 @@ Internal links
 
    :ref:`text <folder/docname:heading>`
 
+Internal links to manual labels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+   
+   :ref:`text <label_text>`
+
 External links
 ~~~~~~~~~~~~~~
 ::
 
    `text <URL>`_
 
+Internal links to downloads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+
+   :download:`text <path/file.ext>`
 
 Admonitions
 -----------
@@ -124,3 +151,11 @@ Figures
       :align: center
 
       This is the descriptive text for the figure.
+
+
+
+Test Bench
+----------
+reST tests go here.
+
+

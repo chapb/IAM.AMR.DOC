@@ -68,7 +68,7 @@ The installation of software on Government of Canada (GoC) computers is managed 
 
 Mendeley
 ~~~~~~~~
-1. Download the latest version of Mendeley `here <https://www.mendeley.com/download-desktop/>`_.
+1. Download the latest version of `Mendeley here <https://www.mendeley.com/download-desktop/>`_.
 2. Right-click on the installer and select '7-Zip > Extract to "Mendeley-Desktop-###-win32"'. This will create a new folder in your current directory.
 3. Navigate to the root of your C:/ drive, and if it doesn't already exist, create a new folder called 'myprograms'.
 4. Move the folder you created in step 2 into the myprograms folder.
