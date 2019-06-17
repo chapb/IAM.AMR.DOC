@@ -128,7 +128,7 @@ You will go through each reference (selected using the preview panel), read the 
 
 Selecting references to review
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Unfortunately, Rayyan does not automatically assign references to reviewers; each reviewer must select their own references to screen.
+Unfortunately, Rayyan does not automatically assign references to reviewers; each reviewer must select their own references to screen. You must set these filters **each time you open Rayyan**.
 
 Each reference must be screened by two reviewers (i.e the references are *dual-screened*). To only show references which have 0 or 1 reviews (and thus require an additional review), use the *Maximum collaborator decisions* filter in the filters panel to filter the references with *At most 1* decision, as shown below:
 
@@ -137,7 +137,14 @@ Each reference must be screened by two reviewers (i.e the references are *dual-s
     
     Using the 'At most 1' filter limits the returned references to those not already screened in duplicate.
 
-You must set this filter **each time you open Rayyan**. Beyond that, selection of references to screen is up to the partcipant; you may choose to go in order, or start from anywhere in the filtered list.
+To only show references to which your region has been assigned (e.g. for Ontario and Alberta, to facilitate conflict resolution), select your region (AB or ON) from the “Search Methods” panel, as shown below. The regions are “Uploaded References [AB.txt]“ and “Uploaded References [ON.txt]”. The region “Uploaded References [OTHER.txt]” is used for other reviewers.
+
+.. figure:: /images/rayyan_filter_to_screen_region.png
+    :align: center
+    
+    Select your region to facilitate later conflict resolution.
+
+You must set these filters **each time you open Rayyan**. Beyond that, selection of references to screen is up to the partcipant; you may choose to go in order, or start from anywhere in the filtered list.
 
 Making decisions
 ~~~~~~~~~~~~~~~~
