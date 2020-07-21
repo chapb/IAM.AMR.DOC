@@ -5,7 +5,7 @@ The CEDAR Database
 
 Introduction
 ------------
-CEDAR, or the Collection of Epidemiologically Derived Associations with Resistance, is a Microsoft Access database designed to facilitate the extraction and retrieval of data relevant to the IAM.AMR project. 
+CEDAR, or the Collection of Epidemiologically Derived Associations with Resistance, is a Microsoft Access database designed to facilitate the extraction and retrieval of data relevant to the IAM.AMR project.
 
 What is a database?
 ~~~~~~~~~~~~~~~~~~~
@@ -34,12 +34,12 @@ The second drawback is that out table does not serve a single logical purpose --
 
 A relational database approach would involve splitting these two tables into unique entities, and linking them via a common field:
 
-==========  ==========  ==========  ==========  
-ID          Province    Premier     Party     
 ==========  ==========  ==========  ==========
-01          Ontario     Ford        CPC       
-02          Quebec      Legault     CAQ       
-03          Alberta     Notley      NDP          
+ID          Province    Premier     Party
+==========  ==========  ==========  ==========
+01          Ontario     Ford        CPC
+02          Quebec      Legault     CAQ
+03          Alberta     Notley      NDP
 ==========  ==========  ==========  ==========
 
 ==========  ==========  ==========
@@ -61,7 +61,7 @@ A **database** is a collection of **tables**, linked together by defined **relat
 
 Tables, like those in a spreadsheet, consist of rows and columns. Each row also known as a **tuple** or **record**, is a set of data which represents a single item. This set of data consists of multiple named pieces of data, known as **attributes** or **fields**, which are organized into columns. In our examples above, each row is a set of data corresponding to a major city. Each set of data has individual data points, corresponding to the headings (or fields) of our table.
 
-A **form** is how we enter data into the database. It is a graphical, easy-to-use way of entering data across many tables at once. In the example above, we might have a simple form to allow users to enter the population size, with a pre-filled dropdown menu of provinces to make data entry faster. A **query** is a request we pass to the database to retrieve a specific subset of records and fields, constrained by criteria we specify. In the example above, we might query the database, asking the question “which premiers preside over regions with cities exceeding one million people”. 
+A **form** is how we enter data into the database. It is a graphical, easy-to-use way of entering data across many tables at once. In the example above, we might have a simple form to allow users to enter the population size, with a pre-filled dropdown menu of provinces to make data entry faster. A **query** is a request we pass to the database to retrieve a specific subset of records and fields, constrained by criteria we specify. In the example above, we might query the database, asking the question “which premiers preside over regions with cities exceeding one million people”.
 
 What is not covered in this documentation?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ Understanding the database files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The CEDAR database consists of two separate and distinct files. The first (and most important) is the *back-end* file. This is the central repository where data is actually stored -- it remains in the same location, on PHAC's network, at all times. The second is the *front-end* file, through which we input, retrieve, and manipulate data. You can think of these front-end and back-end files like a web browser and a website respectively -- the website contains the data, and you access it through the browser. And, just like we can access a website through many browsers, at many locations, we can access the back-end through many versions of the front-end, and on our individual computers. So when we refer to “opening the database”, what we actually mean is opening the front-end file, to interact with the data in the back-end file.
 
-.. note:: If the database is distributed outside of PHAC, the back may be combined into a . There is little to no difference in the appearance 
+.. note:: If the database is distributed outside of PHAC, the back may be combined into a . There is little to no difference in the appearance
 
 Opening the front-end file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +112,7 @@ Accessing the Main Form to View and Enter Data
 The Main Form [Data Entry (Main)] is a combination of two individual forms, highlighted below. The left panel of the form is related to study-level information, and is further broken down into several tabs. The right-panel of the form is related to factor-level information, and is formatted as a continuously scrolling list.
 
 .. figure:: /images/cedar_form.PNG
-   
+
    1: The left panel relates to study-level information. 2: The right panel is a continuously scrolling list of factor-level information.
 
 The form is designed to be as straightforward as possible. The contents of each field are described in the data dictionary, along with specific formatting preferences and requirements. However, the easiest way to understand the purpose of a given field is to look at one of the existing examples.
@@ -138,32 +138,16 @@ This section describes the data extraction rules the guide the inclusion or excl
 
 It should be noted that these rules were not created *a priori* -- they were a result of decisions arising from challenges as data extractors progressed through the collected body of literature. As a result, new rules were established at different stages of the literature review and data extraction process. Where possible, we have reviewed previously examined studies to re-apply these rules, and ensure all qualifying factors were extracted. However, we have been less stringent on eliminating information from the database for factors which may no longer qualify for extraction.
 
-Only binary factors are extracted
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Where a factor is continuous, it must not be extracted. Where a factor has multiple levels, multiple factors should be extracted comparing the referent and defined levels, except ...
-
-... where a level is not informative.
-
-   For example, where the levels are 'A (referent)', 'B', 'C' and 'Other', and 'Other' is undefined. The factors A-B, A-C should be extracted. The factors B-C and A-Other should not be extracted.
-
-However, where an otherwise uninformative level makes it binary (yes, no or other), it shall be extracted. e.g. ceftiofur vs none or other.
 
 
 
-All antimicrobial resistances are extracted
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Factors related to any antimicrobial resistance should be extracted (including ionophores, coccidiostats, and metals), except ...
-
-... where the use is specified only as MDR.
-
-In cases where multiple AMs were used in the past, or as part of generic practices, not captured as an experimental element (e.g. no regression, comparison of multiple control groups), those factors will noit be extracted.
 
 Multiple measurements at single stage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Where multiple measurements are available within a single stage, the measurement closest to human exposure should be extracted, except ...
 
 ... where there are missing or unavailable data at the measurement closest to human exposure.
-   
+
    For example, where an observation is missing from one treatment group, or where multiple experiments end at different time points. The measurement that is closest to human exposure that is comparable across experiments or within an experiment should be extracted.
 
 ... where the data is inapplicable in the Canadian context.
@@ -174,7 +158,7 @@ Where multiple measurements are available within a single stage, the measurement
 
    For example, where an observation is recorded after the cross-over. The measurement that is closest to human exposure, whose effect is attributable only to the treatment should be extracted. A seperate factor may be extracted for the treatment after cross-over.
 
-.. tip::   
+.. tip::
    Resistance was assayed at days 10, 20, and 30 of production. Measurement from day 30 is extracted.
 
    Resistance was assayed at days 10, 20, and 30 of production for the treatment group, and at days 10, and 20 for the referent group. Measurement from day 20 is extracted.
@@ -204,10 +188,7 @@ Poor effect time
 Where a measurement occurs too soon or too long after an exposure, such that the measurement is unlikely to reflect the exposure, the measurement should not be extracted.
 
 
-Immutable Factors
-~~~~~~~~~~~~~~~~~
 
-Including comparisons between sampling period where nothing has changed other than time. Location.
 
 Levels of Abnalysis
 ~~~~~~~~~~~~~~~~~~~
@@ -244,11 +225,11 @@ Required Fields
 -	[Referent Group]
 
 - Core Table
-   
+
    - [A], [B], [C], [D]
 
 - Marginal Table
-   
+
    - [P], [Q], [M1], [M2]
 
 - [Odds Ratio]
@@ -262,7 +243,7 @@ Required Fields
 
 Meta-analyses in CEDAR
 ----------------------
-Meta-analysis is a statistical approach for combining data from multiple studies, often used to increase statistical power, or resolve uncertainty in effect size or direction. The simplest way to think of a meta-analysis is as a weighted average of the included observations, where the weighting accounts for the statistical properties of the studies. 
+Meta-analysis is a statistical approach for combining data from multiple studies, often used to increase statistical power, or resolve uncertainty in effect size or direction. The simplest way to think of a meta-analysis is as a weighted average of the included observations, where the weighting accounts for the statistical properties of the studies.
 
 Meta-analysis is used in the IAM.AMR project to derive a single effect estimator where multiple studies, or multiple observations within a study, are available to describe a given factor.
 
@@ -281,17 +262,17 @@ Meta-analysis must only be performed where the effect measure, and the study pop
   * excluding NAL and FQs?
 
 * across production stages
-  
-  * this includes where the effective stage is the same, but the measurement is taken at a different stage.
-  
 
-When a measurement is available for the same stage of production, the same food-animal, pathogen, and antimicrobial (or sub-class of antimicrobial), as one or more others, they may be included in one of four types of meta-analysis: 
+  * this includes where the effective stage is the same, but the measurement is taken at a different stage.
+
+
+When a measurement is available for the same stage of production, the same food-animal, pathogen, and antimicrobial (or sub-class of antimicrobial), as one or more others, they may be included in one of four types of meta-analysis:
 
 Within Study, Same Antimicrobial
 ++++++++++++++++++++++++++++++++
 Where multiple measurements are available describing the same factor, for the same resistance, the measurements should be combined using meta-analysis.
-   
-.. tip:: 
+
+.. tip::
    Two comparable sub-populations comprise the study population (e.g. barn A and barn B), and ceftiofur resistance is assayed for each. Meta-analysis is conducted for these observations.
 
 Within Study, Same Antimicrobial Class (or Sub-Class)
@@ -322,4 +303,4 @@ How is the meta-analysis performed?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Where multiple measurements are identified as qualifying for inclusion in a meta-analysis, the records are tagged within the CEDAR database by an administrator. When these records are retrieved by a query, and submitted for processing using the cedarr package, a random-effect meta-analysis is automatically performed, and the original records are optionally dropped from the output.
 
-If you identify a record which should be included in a meta-analysis, please notify a CEDAR administrator. 
+If you identify a record which should be included in a meta-analysis, please notify a CEDAR administrator.
