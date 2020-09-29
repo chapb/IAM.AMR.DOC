@@ -36,13 +36,3 @@ Welcome to the documentation for the IAM.AMR project, which seeks to use Integra
    /technology/software
    /technology/analytica
    /technology/git
-
-.. toctree::
-   :caption: Reference
-   :maxdepth: 2
-   :numbered:
-
-   /reference/conventions
-   /reference/faqs
-   /reference/publications
-   /reference/roles
