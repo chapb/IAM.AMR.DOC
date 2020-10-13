@@ -1,4 +1,4 @@
-
+Getting Started section moved to new site under "main."
 
 ===============
 Getting Started

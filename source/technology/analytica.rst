@@ -1,4 +1,4 @@
-
+Analytica section moved to new site under "technology."
 
 Analytica
 =========

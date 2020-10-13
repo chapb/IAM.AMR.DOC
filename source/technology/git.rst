@@ -1,4 +1,4 @@
-
+Git section moved to new site under "technology."
 
 Git et al.
 ==========
